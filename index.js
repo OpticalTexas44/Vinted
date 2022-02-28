@@ -87,11 +87,12 @@ const syncSubscription = (sub) => {
                     .setTitle(item.title)
                     .setURL(`https://www.vinted.fr${item.path}`)
                     .setImage(item.photos[0]?.url)
-                    .setColor('#008000')
+                    .setColor('#c264ff')
                     .setTimestamp(item.createdTimestamp)
                     .setFooter(`Article lié à la recherche : ${sub.id}`)
                     .addField('Taille', item.size || 'vide', true)
                     .addField('Prix', item.price || 'vide', true)
+                    .addfield('Prix de revente', item.resale || '#💬l-prix-de-revente-l👑',true)
                     .addField('Condition', item.status || 'vide', true);
                 client.channels.cache.get(sub.channelID)?.send({ embeds: [embed], components: [
                     new Discord.MessageActionRow()
