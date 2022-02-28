@@ -92,7 +92,6 @@ const syncSubscription = (sub) => {
                     .setFooter(`Article lié à la recherche : ${sub.id}`)
                     .addField('Taille', item.size || 'vide', true)
                     .addField('Prix', item.price || 'vide', true)
-                    .addfield('Prix de revente', '#💬l-prix-de-revente-l👑',true)
                     .addField('Condition', item.status || 'vide', true);
                 client.channels.cache.get(sub.channelID)?.send({ embeds: [embed], components: [
                     new Discord.MessageActionRow()
